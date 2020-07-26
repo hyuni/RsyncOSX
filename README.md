@@ -2,19 +2,28 @@
 
 ![](icon/rsyncosx.png) [The Changelog](https://rsyncosx.netlify.app/post/changelog/).
 
-[![GitHub license](https://img.shields.io/github/license/rsyncOSX/RsyncOSX)](https://github.com/rsyncOSX/RsyncOSX/blob/master/Licence.MD) ![GitHub Releases](https://img.shields.io/github/downloads/rsyncosx/RsyncOSX/v6.3.5/total) ![GitHub Releases](https://img.shields.io/github/downloads/rsyncosx/RsyncOSX/v6.3.0/total)  [![GitHub issues](https://img.shields.io/github/issues/rsyncOSX/RsyncOSX)](https://github.com/rsyncOSX/RsyncOSX/issues) [![Crowdin](https://badges.crowdin.net/rsyncosx/localized.svg)](https://crowdin.com/project/rsyncosx) [![Netlify Status](https://api.netlify.com/api/v1/badges/d375f6d7-dc9f-4913-ab43-bfd46d172eb2/deploy-status)](https://app.netlify.com/sites/rsyncosx/deploys)
+[![GitHub license](https://img.shields.io/github/license/rsyncOSX/RsyncOSX)](https://github.com/rsyncOSX/RsyncOSX/blob/master/Licence.MD) ![GitHub Releases](https://img.shields.io/github/downloads/rsyncosx/RsyncOSX/v6.4.0/total) ![GitHub Releases](https://img.shields.io/github/downloads/rsyncosx/RsyncOSX/v6.3.5/total) [![Crowdin](https://badges.crowdin.net/rsyncosx/localized.svg)](https://crowdin.com/project/rsyncosx) [![Netlify Status](https://api.netlify.com/api/v1/badges/d375f6d7-dc9f-4913-ab43-bfd46d172eb2/deploy-status)](https://app.netlify.com/sites/rsyncosx/deploys)
 
 If you want to discuss [changes or report bugs please create an issue](https://github.com/rsyncOSX/RsyncOSX/issues).
 
 **Read about the --delete parameter** (below) to rsync **before** using rsync and RsyncOSX.
 
-The user documentation is updated in both Jekyll and Hugo. The Jekyll based docs are served from GitHub and the Hugo based from Netlify. If you have any comments about the documentation, which theme to use please [create an issue](https://github.com/rsyncOSX/RsyncOSX/issues).
-
 There are some [docs about RsyncOSX, RsynGUI and RcloneOSX](https://rsyncosx.netlify.app/). The docs are based on Hugo, [the Hugo Theme Even](https://github.com/olOwOlo/hugo-theme-even), Markdown and published on Netlify.
 
 RsyncOSX is a GUI on top of the command line utility `rsync`. Rsync is a file-based synchronization and backup tool. There is no custom solution for the backup archive. You can quit utilizing RsyncOSX (and rsync) at any time and still have access to all synchronized files.
 
-RsyncOSX is compiled with support for **macOS El Capitan version 10.11 - macOS Catalina version 10.15**. The application is implemented in pure Swift 5 (Cocoa and Foundation). RsyncOSX is not depended upon any third party binary distributions. There is, however, [one third party source code](https://github.com/swiftsocket/SwiftSocket) included to check for TCP connections.
+RsyncOSX is compiled with support for **macOS El Capitan version 10.11 - macOS Catalina version 10.15**. The application is implemented in pure Swift 5, Cocoa and Foundation. RsyncOSX is not depended upon any third party binary distributions.
+
+### Dependencies
+
+ From the latest release there are two source code dependencies:
+
+- check for TCP connectivity by utilizing [SwiftSocket](https://github.com/swiftsocket/SwiftSocket), some functions require connections to remote servers
+- execute pre and post shellscripts by utilizing John Sundell´s [ShellOut](https://github.com/JohnSundell/ShellOut)
+
+Both are available as source code and automatically included as part of building RsyncOSX.
+
+### Scheduling
 
 Scheduled tasks are added and deleted within RsyncOSX. Executing the scheduled tasks is by the [menu app](https://rsyncosx.netlify.app/post/menuapp/).
 
